@@ -27,21 +27,18 @@ public class Cargo {
         return coffeeBeanType.getPriceForKilo() * getAmountOfCoffee();
     }
 
-    public double getGeneralPriceAmount() {
-        return coffeeBeanType.getPriceForKilo();
-    }
-
     @Override
     public boolean equals(Object comparable) {
         if (this == comparable) return true;
         if (comparable == null || getClass() != comparable.getClass()) return false;
         Cargo cargo = (Cargo) comparable;
-        return Objects.equals(coffeeBeanType, cargo.coffeeBeanType) && coffeePackingType == cargo.coffeePackingType;
+        return  (coffeeBeanType == cargo.coffeeBeanType) && coffeePackingType == cargo.coffeePackingType;
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(coffeeBeanType, coffeePackingType);
+        int result = 1;
+        return 31 * result + coffeeBeanType.hashCode();
     }
 
     @Override

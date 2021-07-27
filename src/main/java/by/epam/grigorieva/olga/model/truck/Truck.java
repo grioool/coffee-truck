@@ -5,6 +5,7 @@ import com.sun.source.tree.BreakTree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Truck {
 
@@ -46,6 +47,20 @@ public class Truck {
 
     public List<Cargo> getListOfCargos(){
         return new ArrayList<>(cargoArrayList);
+    }
+
+    @Override
+    public boolean equals(Object  comparable) {
+        if (this ==  comparable) return true;
+        if (comparable == null || getClass() !=  comparable.getClass()) return false;
+        Truck truck = (Truck)  comparable;
+        return maxAmountOfCargo == truck.maxAmountOfCargo && maxAmountOfTotal == truck.maxAmountOfTotal && Objects.equals(cargoArrayList, truck.cargoArrayList);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        return 31 * result + maxAmountOfTotal + maxAmountOfCargo;
     }
 
     @Override

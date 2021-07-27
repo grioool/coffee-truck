@@ -1,5 +1,7 @@
 package by.epam.grigorieva.olga.model.coffee;
 
+import java.util.Objects;
+
 public abstract class Coffee {
 
     public Coffee(CoffeePhysicalCondition physicalCondition) {
@@ -62,5 +64,20 @@ public abstract class Coffee {
         public String toString(){
             return "{\n\tAmount of coffee: " + String.valueOf(amountOfCoffee) + "\n\tAmount of pack: " + amountOfPack + "\n}";
         }
+    }
+
+    @Override
+    public boolean equals(Object comparable) {
+        if (this == comparable) return true;
+        if (comparable == null || getClass() != comparable.getClass()) return false;
+        Coffee coffee = (Coffee) comparable;
+        return coffeePhysicalCondition == coffee.coffeePhysicalCondition;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = 31 * result + coffeePhysicalCondition.hashCode();
+        return result;
     }
 }
