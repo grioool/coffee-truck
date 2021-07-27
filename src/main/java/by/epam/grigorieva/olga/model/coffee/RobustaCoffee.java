@@ -10,4 +10,9 @@ public class RobustaCoffee extends Coffee {
     public double getPriceForKilo() {
         return 10 * getPhysicalCondition().getPriceMultiplier();
     }
+
+    @Override
+    public String toString(){
+        return "Robusta: physical condition - " + getPhysicalCondition() + " price for kilo - " + getPriceForKilo();
+    }
 }

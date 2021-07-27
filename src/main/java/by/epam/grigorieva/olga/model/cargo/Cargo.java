@@ -2,6 +2,8 @@ package by.epam.grigorieva.olga.model.cargo;
 
 import by.epam.grigorieva.olga.model.coffee.Coffee;
 
+import java.util.Objects;
+
 public class Cargo {
 
     private final Coffee coffeeBeanType;
@@ -30,8 +32,20 @@ public class Cargo {
     }
 
     @Override
+    public boolean equals(Object comparable) {
+        if (this == comparable) return true;
+        if (comparable == null || getClass() != comparable.getClass()) return false;
+        Cargo cargo = (Cargo) comparable;
+        return Objects.equals(coffeeBeanType, cargo.coffeeBeanType) && coffeePackingType == cargo.coffeePackingType;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(coffeeBeanType, coffeePackingType);
+    }
+
+    @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        return result.append(coffeeBeanType).append(coffeePackingType).toString();
+        return String.valueOf(coffeeBeanType)+  " Packaging type:  " + coffeePackingType + " Price: " + getPriceOfCoffee();
     }
 }

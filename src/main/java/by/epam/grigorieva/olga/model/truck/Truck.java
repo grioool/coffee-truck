@@ -50,8 +50,7 @@ public class Truck {
 
     @Override
     public String toString(){
-        StringBuilder result = new StringBuilder();
-            return result.append(cargoArrayList).toString();
+        return String.valueOf(cargoArrayList);
     }
 
 }

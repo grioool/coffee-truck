@@ -9,4 +9,9 @@ public class LibericaCoffee extends Coffee {
     public double getPriceForKilo(){
         return 20 * getPhysicalCondition().getPriceMultiplier();
     }
+
+    @Override
+    public String toString(){
+        return "Liberica: physical condition - " + getPhysicalCondition() + " price for kilo - " + getPriceForKilo();
+    }
 }

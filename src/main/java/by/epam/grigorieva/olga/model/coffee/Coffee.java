@@ -32,8 +32,7 @@ public abstract class Coffee {
 
         @Override
         public String toString(){
-            StringBuilder result = new StringBuilder();
-            return result.append(priceMultiplier).toString();
+            return String.valueOf(priceMultiplier);
         }
     }
 
@@ -61,9 +60,7 @@ public abstract class Coffee {
 
         @Override
         public String toString(){
-            StringBuilder result = new StringBuilder();
-            return result.append(amountOfCoffee).append(amountOfPack).toString();
+            return "{\n\tAmount of coffee: " + String.valueOf(amountOfCoffee) + "\n\tAmount of pack: " + amountOfPack + "\n}";
         }
-
     }
 }

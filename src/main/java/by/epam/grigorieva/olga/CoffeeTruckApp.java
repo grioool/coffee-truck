@@ -11,10 +11,17 @@ import by.epam.grigorieva.olga.model.truck.Truck;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class CoffeeTruckApp {
 
+    private static Logger logger = LoggerFactory.getLogger(CoffeeTruckApp.class);
     private static Truck truck;
     private static Scanner in;
 
